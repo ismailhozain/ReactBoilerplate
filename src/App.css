@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
-
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+}
 .App-logo {
   height: 40vmin;
 }
@@ -20,3 +26,5 @@
 .App-link {
   color: #09d3ac;
 }
+
+<!-- IF YOU ARE CONFUSED ABOUT THE LACK OF LONG ASS CSS, WELL YOU HAVE BASIC FRONT END LOGIC DOWN. Ant design imported their own css file which is super big.-->
