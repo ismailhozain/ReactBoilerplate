@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//react stuff above, add new pages beneath.
 import './index.css';
 import App from './App';
 import "antd/dist/antd.css";
