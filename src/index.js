@@ -6,7 +6,7 @@ import App from './App';
 import "antd/dist/antd.css";
 import * as serviceWorker from './serviceWorker';
 import { Layout, Menu, Breadcrumb } from 'antd';
-const { Header, Content, Footer } = Layout;
+// Your web app's Firebase configuration
 
 ReactDOM.render(<App />, document.getElementById('root'));
 //LOOK KIDS. YOU PROBABLY SHOULDNT TOUCH THIS FILE MUCH.

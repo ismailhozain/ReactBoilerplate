@@ -10,6 +10,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="logo192.png" />
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -24,10 +25,35 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>StudyBoard</title>
   </head>
   <body>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAJGSf-BZ2kEGSffroVHkHGZOi2TMaYdzU",
+        authDomain: "studyboard-e21ef.firebaseapp.com",
+        databaseURL: "https://studyboard-e21ef.firebaseio.com",
+        projectId: "studyboard-e21ef",
+        storageBucket: "studyboard-e21ef.appspot.com",
+        messagingSenderId: "80228546382",
+        appId: "1:80228546382:web:94fa49638c799c49d5d01f",
+        measurementId: "G-DCQYBXE10C"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.

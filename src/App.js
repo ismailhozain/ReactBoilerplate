@@ -47,6 +47,9 @@ function App() {
                       <Menu.Item>
                           Study Some Content.
                       </Menu.Item>
+                      <Menu.Item>
+                          Work on projects with Google Drive.
+                      </Menu.Item>
                   </Menu>
               </div>
           </Router>
