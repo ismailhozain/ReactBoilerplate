@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e33e9427-f311-4e03-9bcd-534518831334" name="Default Changelist" comment="">
+    <list default="true" id="e33e9427-f311-4e03-9bcd-534518831334" name="Default Changelist" comment="partially set up firebase.y">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,7 +96,7 @@
       <workItem from="1571521861415" duration="3982000" />
       <workItem from="1571591367912" duration="10136000" />
       <workItem from="1571670011471" duration="2878000" />
-      <workItem from="1571692584874" duration="702000" />
+      <workItem from="1571692584874" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="added antd">
       <created>1570846529744</created>
@@ -127,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571684551635</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="partially set up firebase.">
+      <created>1571698522038</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571698522040</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
