@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e33e9427-f311-4e03-9bcd-534518831334" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/firebase/firebase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +96,8 @@
       <workItem from="1570893269362" duration="1235000" />
       <workItem from="1571521861415" duration="3982000" />
       <workItem from="1571591367912" duration="10136000" />
-      <workItem from="1571670011471" duration="2693000" />
+      <workItem from="1571670011471" duration="2878000" />
+      <workItem from="1571692584874" duration="702000" />
     </task>
     <task id="LOCAL-00001" summary="added antd">
       <created>1570846529744</created>
@@ -122,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571538011368</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="partially set up firebase.">
+      <created>1571684551634</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571684551635</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +138,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -142,6 +149,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added antd" />
     <MESSAGE value="fixed hilarious error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed hilarious error" />
+    <MESSAGE value="partially set up firebase." />
+    <option name="LAST_COMMIT_MESSAGE" value="partially set up firebase." />
   </component>
 </project>
