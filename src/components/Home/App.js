@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import logo from './logo.svg';
 import {
     BrowserRouter as Router,
     Switch,
@@ -46,6 +45,9 @@ function App() {
                       </Menu.Item>
                       <Menu.Item>
                           Study Some Content.
+                      </Menu.Item>
+                      <Menu.Item>
+                          Work on projects with Google Drive.
                       </Menu.Item>
                   </Menu>
               </div>
