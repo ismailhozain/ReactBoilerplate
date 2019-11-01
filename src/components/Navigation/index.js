@@ -5,7 +5,10 @@ const Navigation = () => (
     <div>
         <ul>
             <li>
-                <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+                <button>
+                    <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+
+                </button>yarn
             </li>
             <li>
                 <Link to={ROUTES.LANDING}>Landing</Link>
