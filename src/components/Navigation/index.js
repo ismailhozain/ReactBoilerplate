@@ -8,7 +8,7 @@ const Navigation = () => (
                 <button>
                     <Link to={ROUTES.SIGN_IN}>Sign In</Link>
 
-                </button>yarn
+                </button>
             </li>
             <li>
                 <Link to={ROUTES.LANDING}>Landing</Link>
