@@ -10,3 +10,4 @@ export const WRITE = '/write';
 export const CLASSES = '/classes';
 export const FEEDBACK = '/feedback';
 export const SETTINGS = '/settings';
+export const STATS = '/stats';

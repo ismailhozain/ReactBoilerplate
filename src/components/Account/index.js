@@ -8,6 +8,7 @@ const Account = () => (
   <div>
     <h1>Account</h1>
       <Link to={ROUTES.SETTINGS}>Settings</Link>
+      <Link to={ROUTES.STATS}>Statistics</Link>
   </div>
 );
 

@@ -1,63 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import {Menu, Icon} from "antd";
+import { Switch, Icon } from 'antd';
 import 'antd/dist/antd.css';
-const { SubMenu } = Menu;
+import Button from "antd/lib/button";
+import Form from "antd/lib/form";
 
 const Settings = () => (
     <div>
         <h1>Settings</h1>
-        <Menu style={{ width: 256 }} mode="vertical">
-            <SubMenu
-                key="sub1"
-                title={
-                    <span>
-          <Icon type="mail" />
-          <span>Navigation One</span>
-        </span>
-                }
-            >
-                <Menu.ItemGroup title="Item 1">
-                    <Menu.Item key="1">Option 1</Menu.Item>
-                    <Menu.Item key="2">Option 2</Menu.Item>
-                </Menu.ItemGroup>
-                <Menu.ItemGroup title="Iteom 2">
-                    <Menu.Item key="3">Option 3</Menu.Item>
-                    <Menu.Item key="4">Option 4</Menu.Item>
-                </Menu.ItemGroup>
-            </SubMenu>
-            <SubMenu
-                key="sub2"
-                title={
-                    <span>
-          <Icon type="appstore" />
-          <span>Navigation Two</span>
-        </span>
-                }
-            >
-                <Menu.Item key="5">Option 5</Menu.Item>
-                <Menu.Item key="6">Option 6</Menu.Item>
-                <SubMenu key="sub3" title="Submenu">
-                    <Menu.Item key="7">Option 7</Menu.Item>
-                    <Menu.Item key="8">Option 8</Menu.Item>
-                </SubMenu>
-            </SubMenu>
-            <SubMenu
-                key="sub4"
-                title={
-                    <span>
-          <Icon type="setting" />
-          <span>Navigation Three</span>
-        </span>
-                }
-            >
-                <Menu.Item key="9">Option 9</Menu.Item>
-                <Menu.Item key="10">Option 10</Menu.Item>
-                <Menu.Item key="11">Option 11</Menu.Item>
-                <Menu.Item key="12">Option 12</Menu.Item>
-            </SubMenu>
-        </Menu>
+        <div className={"darkTheme"}>
+            <h3>Dark Theme</h3>
+            <Switch
+                checkedChildren={<Icon type="check" />}
+                unCheckedChildren={<Icon type="close" />}
+                defaultChecked
+            />
+        </div>
+        <div className={"accountStuff"}>
+            <Form>
+                {/*wait on this.*/}
+            </Form>
+            <h3>Delete account</h3>
+            <Button type={"danger"}>
+                Delete Account Permanently!
+            </Button>
+        </div>
     </div>
 );
 

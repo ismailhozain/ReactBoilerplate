@@ -16,6 +16,7 @@ import WritePage from '../Write';
 import ClassesPage from '../Classes';
 import FeedbackPage from '../Feedback';
 import SettingsPage from '../Settings';
+import StatsPage from '../Stats';
 import * as ROUTES from '../../constants/routes';
 const App = () => (
     <Router>
@@ -34,6 +35,7 @@ const App = () => (
             <Route path={ROUTES.CLASSES} component={ClassesPage} />
             <Route path={ROUTES.FEEDBACK} component={FeedbackPage} />
             <Route path={ROUTES.SETTINGS} component={SettingsPage} />
+            <Route path={ROUTES.STATS} component={StatsPage} />
         </div>
     </Router>
 );
