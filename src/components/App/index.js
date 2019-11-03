@@ -18,6 +18,7 @@ import FeedbackPage from '../Feedback';
 import SettingsPage from '../Settings';
 import StatsPage from '../Stats';
 import * as ROUTES from '../../constants/routes';
+import Footer from "../Footer";
 const App = () => (
     <Router>
         <div>
@@ -36,6 +37,8 @@ const App = () => (
             <Route path={ROUTES.FEEDBACK} component={FeedbackPage} />
             <Route path={ROUTES.SETTINGS} component={SettingsPage} />
             <Route path={ROUTES.STATS} component={StatsPage} />
+
+            <Footer />
         </div>
     </Router>
 );
