@@ -26,6 +26,12 @@ const Home = () => (
             </p>
             <Link to={ROUTES.CLASSES}>Lets go!</Link>
         </Card>
+        <Card title="Feedback" style={{ width: 300 }}>
+            <p>
+                Want to tell the devs something (Yes we check it.)?
+            </p>
+            <Link to={ROUTES.FEEDBACK}>Lets go!</Link>
+        </Card>
     </div>
   </div>
 );

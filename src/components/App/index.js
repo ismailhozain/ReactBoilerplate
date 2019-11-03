@@ -13,7 +13,9 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import StudyPage from '../Study';
 import WritePage from '../Write';
-import Classes from '../Classes';
+import ClassesPage from '../Classes';
+import FeedbackPage from '../Feedback';
+import SettingsPage from '../Settings';
 import * as ROUTES from '../../constants/routes';
 const App = () => (
     <Router>
@@ -29,7 +31,9 @@ const App = () => (
             <Route path={ROUTES.ADMIN} component={AdminPage} />
             <Route path={ROUTES.STUDY} component={StudyPage} />
             <Route path={ROUTES.WRITE} component={WritePage} />
-            <Route path={ROUTES.CLASSES} component={Classes} />
+            <Route path={ROUTES.CLASSES} component={ClassesPage} />
+            <Route path={ROUTES.FEEDBACK} component={FeedbackPage} />
+            <Route path={ROUTES.SETTINGS} component={SettingsPage} />
         </div>
     </Router>
 );

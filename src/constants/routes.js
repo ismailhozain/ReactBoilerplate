@@ -8,3 +8,5 @@ export const STUDY = '/study';
 export const PASSWORD_FORGET = '/pw-forget';
 export const WRITE = '/write';
 export const CLASSES = '/classes';
+export const FEEDBACK = '/feedback';
+export const SETTINGS = '/settings';
