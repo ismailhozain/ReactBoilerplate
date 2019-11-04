@@ -11,7 +11,14 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
+import StudyPage from '../Study';
+import WritePage from '../Write';
+import ClassesPage from '../Classes';
+import FeedbackPage from '../Feedback';
+import SettingsPage from '../Settings';
+import StatsPage from '../Stats';
 import * as ROUTES from '../../constants/routes';
+import Footer from "../Footer";
 const App = () => (
     <Router>
         <div>
@@ -24,6 +31,14 @@ const App = () => (
             <Route path={ROUTES.HOME} component={HomePage} />
             <Route path={ROUTES.ACCOUNT} component={AccountPage} />
             <Route path={ROUTES.ADMIN} component={AdminPage} />
+            <Route path={ROUTES.STUDY} component={StudyPage} />
+            <Route path={ROUTES.WRITE} component={WritePage} />
+            <Route path={ROUTES.CLASSES} component={ClassesPage} />
+            <Route path={ROUTES.FEEDBACK} component={FeedbackPage} />
+            <Route path={ROUTES.SETTINGS} component={SettingsPage} />
+            <Route path={ROUTES.STATS} component={StatsPage} />
+
+            <Footer />
         </div>
     </Router>
 );
