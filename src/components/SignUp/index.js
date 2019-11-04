@@ -5,6 +5,16 @@ import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
 import './signup.css';
 
+const INITIAL_STATE = {
+    username: '',
+    email: '',
+    passwordOne: '',
+    passwordTwo: '',
+    error: null,
+    //NEED TO MAKE SOME OF YHE OTEHR COMPONENTS NEEDED INCLUDING THE HAC/CANVAS IMPLEMENTATION PASWORDS
+
+};
+
 class NormalLoginForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
@@ -61,7 +71,7 @@ class NormalLoginForm extends React.Component {
                         )}
                     </Form.Item>
                     <Form.Item>
-                        {getFieldDecorator('password', {
+                        {getFieldDecorator('passwordOne', {
                             rules: [{ required: true, message: 'Please input your Password!' }],
                         })(
                             <Input
@@ -71,6 +81,18 @@ class NormalLoginForm extends React.Component {
                             />,
                         )}
                     </Form.Item>
+                    <Form.Item>
+                        {getFieldDecorator('passwordTwo', {
+                            rules: [{ required: true, message: 'Please input your password again!' }],
+                        })(
+                            <Input
+                                prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                type="password"
+                                placeholder="Password"
+                            />,
+                        )}
+                    </Form.Item>
+
                     <Form.Item>
                         {getFieldDecorator('hacUsername', {
                             rules: [{ required: true, message: 'Please input your HAC username!' }],

@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="start" type="js.build_tools.npm" nameIsGenerated="true">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="start" />
+    <node-interpreter value="project" />
+    <envs>
+      <env name="REACT_APP_API_KEY" value="AIzaSyAJGSf-BZ2kEGSffroVHkHGZOi2TMaYdzU REACT_APP_AUTH_DOMAIN=studyboard-e21ef.firebaseapp.com REACT_APP_DATABASE_URL=https://studyboard-e21ef.firebaseio.com REACT_APP_PROJECT_ID=studyboard-e21ef REACT_APP_STORAGE_BUCKET=studyboard-e21ef.appspot.com REACT_APP_MESSAGING_SENDER_ID=80228546382 REACT_APP_APP_ID=1:80228546382:web:94fa49638c799c49d5d01f REACT_APP_MEASUREMENT_ID=G-DCQYBXE10C" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
