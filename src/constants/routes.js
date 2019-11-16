@@ -11,3 +11,6 @@ export const CLASSES = '/classes';
 export const FEEDBACK = '/feedback';
 export const SETTINGS = '/settings';
 export const STATS = '/stats';
+export const ABOUT = '/about';
+export const CONTACT = '/contact';
+export const ERROR = '/404';

@@ -17,6 +17,9 @@ import ClassesPage from '../Classes';
 import FeedbackPage from '../Feedback';
 import SettingsPage from '../Settings';
 import StatsPage from '../Stats';
+import ContactPage from '../Contact';
+import AboutPage from '../About';
+import ErrorPage from '../Error';
 import * as ROUTES from '../../constants/routes';
 import Footer from "../Footer";
 const App = () => (
@@ -37,7 +40,9 @@ const App = () => (
             <Route path={ROUTES.FEEDBACK} component={FeedbackPage} />
             <Route path={ROUTES.SETTINGS} component={SettingsPage} />
             <Route path={ROUTES.STATS} component={StatsPage} />
-
+            <Route path={ROUTES.CONTACT} component={ContactPage} />
+            <Route path={ROUTES.ABOUT} component={AboutPage} />
+            <Route path={ROUTES.ERROR} component={ErrorPage} />
             <Footer />
         </div>
     </Router>

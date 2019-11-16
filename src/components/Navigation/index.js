@@ -9,7 +9,7 @@ const Navigation = () => (
     <div>
         <Menu mode={"horizontal"}>
                 <Menu.Item>
-                    <Link to={ROUTES.LANDING}><img src={Logo}/></Link>
+                    <Link to={ROUTES.LANDING}><img alt = "the studyboard logo, a blue and white window diamond."src={Logo}/></Link>
                 </Menu.Item>
                 <Menu.Item>
                     <Link to={ROUTES.SIGN_IN}><Icon type="login" />Sign In</Link>
