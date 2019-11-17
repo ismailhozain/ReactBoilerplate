@@ -11,11 +11,22 @@ const INITIAL_STATE = {
     passwordOne: '',
     passwordTwo: '',
     error: null,
-    //NEED TO MAKE SOME OF YHE OTEHR COMPONENTS NEEDED INCLUDING THE HAC/CANVAS IMPLEMENTATION PASWORDS
-
 };
 
-class NormalLoginForm extends React.Component {
+class NormalSignupForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {...INITIAL_STATE};
+    }
+
+
+
+
+
+
+
+
+
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -100,6 +111,6 @@ class NormalLoginForm extends React.Component {
     }
 }
 
-const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLoginForm);
+const WrappedNormalSignupForm = Form.create({ name: 'normal_signup' })(NormalSignupForm);
 
-export default WrappedNormalLoginForm;
+export default WrappedNormalSignupForm;

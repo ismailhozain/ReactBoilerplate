@@ -7,7 +7,7 @@ import './footer.css';
 const Footer = () => (
     <div className={"foot center"}>
         <Link className="links" to={ROUTES.CONTACT}>Contact us.</Link>
-        <Link to={ROUTES.ABOUT}>About</Link>
+        <Link className="links" to={ROUTES.ABOUT}>About</Link>
 
         <p className={"copy"}>Copyright MHS Software Division</p>
     </div>
