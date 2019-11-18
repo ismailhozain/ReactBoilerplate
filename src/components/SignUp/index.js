@@ -19,32 +19,47 @@ class NormalSignupForm extends React.Component {
         this.state = {...INITIAL_STATE};
     }
 
-
-
-
-
-
-
-
-
     handleSubmit = e => {
-        e.preventDefault();
+        const { username, email, passwordOne} = this.state;
+
+        this.props.firebase.doCreateUserWithEmailAndPassword(email, passwordOne).then(authUser({ ...INITIAL_STATE}).catch(error => {
+            this.setState({error})
+        })
+
+
+
+        );
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 alert("Your password is the same as your canvas password");
                 console.log('Received values of form: ', values);
             }
         });
+        e.preventDefault();
     };
-
+    handleChange = e => {
+        this.setState({[event.target.name]: event.target.value });
+    };
     render()  {
         const { getFieldDecorator } = this.props.form;
+       const {
+           firstName,
+           lastName,
+           email,
+           passwordOne,
+           passwordTwo,
+           error,
+       } = this.state;
+       const isInvalid =
+           passwordOne !== passwordTwo ||
+           passwordOne === ' ' ||
+           email === ' ' ||
+           username === ' ';
         return (
             <div className={"center wholeDiv"}>
-
-                <Form onSubmit={this.handleSubmit} className="login-form">
+                <Form onSubmit={this.handleSubmit} onChange={this.handleChange} className="login-form">
                     <h2 className={"center title"}>Studyboard</h2>
-                    <Form.Item>
+                    <Form.Item value={firstName}>
                         {getFieldDecorator('firstName', {
                             rules: [{ required: true, message: 'Please input your first name!' }],
                         })(
@@ -54,7 +69,7 @@ class NormalSignupForm extends React.Component {
                             />,
                         )}
                     </Form.Item>
-                    <Form.Item>
+                    <Form.Item value={lastName}>
                         {getFieldDecorator('lastName', {
                             rules: [{ required: true, message: 'Please input your last name!' }],
                         })(
@@ -101,7 +116,7 @@ class NormalSignupForm extends React.Component {
                             initialValue: true,
                         })(<Checkbox>Remember me</Checkbox>)}
                         <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password</Link>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
+                        <Button disabled={isInvalid} type="primary" htmlType="submit" className="login-form-button">
                             <Link to={ROUTES.HOME}>Sign Up!</Link>
                         </Button>
                     </Form.Item>
