@@ -1,7 +1,6 @@
 import React, {Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { compose } from 'recompose';
 
 import  {withFirebase}  from '../Firebase';
