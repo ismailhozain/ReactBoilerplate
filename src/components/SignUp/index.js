@@ -1,131 +1,128 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { compose } from 'recompose';
+
+import  {withFirebase}  from '../Firebase';
 import 'antd/dist/antd.css';
 import './signup.css';
 
+const SignUpPage = () => (
+    <div>
+        <h1>SignUp</h1>
+        <SignupForm/>
+    </div>
+
+);
+
 const INITIAL_STATE = {
-    username: '',
+    firstName: '',
+    lastName: ' ',
     email: '',
+    schoolId: ' ',
     passwordOne: '',
     passwordTwo: '',
     error: null,
 };
 
-class NormalSignupForm extends React.Component {
+
+class SignupFormBase extends Component {
     constructor(props) {
         super(props);
         this.state = {...INITIAL_STATE};
     }
 
-    handleSubmit = e => {
-        const { username, email, passwordOne} = this.state;
-
-        this.props.firebase.doCreateUserWithEmailAndPassword(email, passwordOne).then(authUser({ ...INITIAL_STATE}).catch(error => {
-            this.setState({error})
-        })
-
-
-
-        );
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-                alert("Your password is the same as your canvas password");
-                console.log('Received values of form: ', values);
-            }
-        });
-        e.preventDefault();
+    onSubmit = event => {
+        const { firstName, lastName, schoolId, email, passwordOne} = this.state;
+        this.props.firebase
+            .doCreateUserWithEmailAndPassword(email, passwordOne)
+            .then(authUser => {
+                this.setState({ ...INITIAL_STATE });
+                this.props.history.push(ROUTES.HOME);
+            })
+            .catch(error => {
+                this.setState({ error });
+            });
+        event.preventDefault();
     };
-    handleChange = e => {
+
+    onChange = event => {
         this.setState({[event.target.name]: event.target.value });
     };
+
     render()  {
-        const { getFieldDecorator } = this.props.form;
-       const {
+        const {
            firstName,
            lastName,
            email,
+           schoolId,
            passwordOne,
            passwordTwo,
            error,
-       } = this.state;
+        } = this.state;
+
        const isInvalid =
            passwordOne !== passwordTwo ||
            passwordOne === ' ' ||
-           email === ' ' ||
-           username === ' ';
-        return (
+           email === ' ';
+       return (
             <div className={"center wholeDiv"}>
-                <Form onSubmit={this.handleSubmit} onChange={this.handleChange} className="login-form">
-                    <h2 className={"center title"}>Studyboard</h2>
-                    <Form.Item value={firstName}>
-                        {getFieldDecorator('firstName', {
-                            rules: [{ required: true, message: 'Please input your first name!' }],
-                        })(
-                            <Input
-                                prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                placeholder="First Name"
-                            />,
-                        )}
-                    </Form.Item>
-                    <Form.Item value={lastName}>
-                        {getFieldDecorator('lastName', {
-                            rules: [{ required: true, message: 'Please input your last name!' }],
-                        })(
-                            <Input
-                                prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                placeholder="Last Name"
-                            />,
-                        )}
-                    </Form.Item>
-                    <Form.Item>
-                        {getFieldDecorator('schoolEmail', {
-                            rules: [{ required: true, message: 'Please input your school-issued email!' }],
-                        })(
-                            <Input
-                                prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                placeholder="School Email"
-                            />,
-                        )}
-                    </Form.Item>
-                    <Form.Item>
-                        {getFieldDecorator('schoolId', {
-                            rules: [{ required: true, message: 'Please input your school ID!' }],
-                        })(
-                            <Input
-                                prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                placeholder="School ID"
-                            />,
-                        )}
-                    </Form.Item>
-                    <Form.Item>
-                        {getFieldDecorator('canvasPassword', {
-                            rules: [{ required: true, message: 'Please input your Canvas password!' }],
-                        })(
-                            <Input
-                                prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                placeholder="Canvas Password"
-                                type={"password"}
-                            />,
-                        )}
-                    </Form.Item>
-                    <Form.Item>
-                        {getFieldDecorator('remember', {
-                            valuePropName: 'checked',
-                            initialValue: true,
-                        })(<Checkbox>Remember me</Checkbox>)}
-                        <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password</Link>
-                        <Button disabled={isInvalid} type="primary" htmlType="submit" className="login-form-button">
-                            <Link to={ROUTES.HOME}>Sign Up!</Link>
-                        </Button>
-                    </Form.Item>
-                </Form>
+                <form onSubmit={this.onSubmit}>
+                    <input
+                        name="firstName"
+                        value={firstName}
+                        onChange={this.onChange}
+                        type="text"
+                        placeholder="First Name"
+                    />
+                    <input
+                        name="lastName"
+                        value={lastName}
+                        onChange={this.onChange}
+                        type="text"
+                        placeholder="Last Name"
+                    />
+                    <input
+                        name="email"
+                        value={email}
+                        onChange={this.onChange}
+                        type="email"
+                        placeholder="School Email"
+                    />
+                    <input
+                        name="schoolId"
+                        value={schoolId}
+                        onChange={this.onChange}
+                        type="text"
+                        placeholder="School Id Number"
+                    />
+                    <input
+                        name="passwordOne"
+                        value={passwordOne}
+                        onChange={this.onChange}
+                        type="password"
+                        placeholder="Canvas Password"
+                    />
+                    <input
+                        name="passwordTwo"
+                        value={passwordTwo}
+                        onChange={this.onChange}
+                        type="password"
+                        placeholder="Confirm Canvas Password"
+                    />
+                    <button disabled={isInvalid} type="submit">Sign Up</button>
+                    {error && <p>{error.message}</p>}
+                </form>
             </div>
         );
     }
 }
+const SignupForm = compose(
+        withRouter,
+        withFirebase,
+        )(SignupFormBase);
 
-const WrappedNormalSignupForm = Form.create({ name: 'normal_signup' })(NormalSignupForm);
+export default SignUpPage;
 
-export default WrappedNormalSignupForm;
+export {SignupForm};
