@@ -1,9 +1,10 @@
 import React from 'react';
 import { withFirebase } from '../Firebase';
+import Button from "antd/es/button";
 const SignOutButton = ({ firebase }) => (
-    <button type="button" onClick={firebase.doSignout()}>
+    <Button type="button" onClick={firebase.doSignout()}>
         Sign Out
-    </button>
+    </Button>
 
 );
 

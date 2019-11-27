@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card } from 'antd';
 import * as ROUTES from '../../constants/routes';
 import 'antd/dist/antd.css';
-
+import {withAuthorization} from '../Session';
 const Home = () => (
   <div>
     <h1>What would you like to do today?</h1>
@@ -35,5 +35,6 @@ const Home = () => (
     </div>
   </div>
 );
+const condition = authUser => !!authUser;
 
-export default Home;
+export default withAuthorization(condition)(Home);

@@ -5,14 +5,19 @@ import {Menu, Icon} from "antd";
 import 'antd/dist/antd.css';
 import Logo from './logo.svg';
 import './navigation.css';
+import AuthUserContext from "../Session/context";
 import SignOutButton from "../SignOut";
-const Navigation = ({authUser}) => (
-    <div>{authUser ? <NavigationAuth/> : <NavigationNonAuth/>}</div>
+const Navigation = () => (
+    <div>
+        <AuthUserContext.Consumer>
+            { authUser => authUser ? <NavigationAuth/> : <NavigationNonAuth/> }
+        </AuthUserContext.Consumer>
+    </div>
 );
 const NavigationAuth = () => (
     <Menu mode={"horizontal"}>
         <Menu.Item>
-            <Link to={ROUTES.LANDING}><img alt = "the studyboard logo, a blue and white window diamond."src={Logo}/></Link>
+            <Link to={ROUTES.LANDING}><img alt = "the studyboard logo, a blue and white window diamond." src={Logo}/></Link>
         </Menu.Item>
         <Menu.Item>
             <Link to={ROUTES.HOME}><Icon type="dashboard" />Home</Link>
@@ -28,7 +33,7 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
     <Menu mode={"horizontal"}>
         <Menu.Item>
-            <Link to={ROUTES.LANDING}><img alt = "the studyboard logo, a blue and white window diamond."src={Logo}/></Link>
+            <Link to={ROUTES.LANDING}><img alt = "the studyboard logo, a blue and white window diamond." src={Logo}/></Link>
         </Menu.Item>
         <Menu.Item>
             <Link to={ROUTES.SIGN_IN}><Icon type="login" />Sign In</Link>

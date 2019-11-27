@@ -7,6 +7,7 @@ import "firebase/firestore";
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import {Icon} from "antd";
+import * as firebase from "firebase";
 const SignInPage = () => (
     <div>
         <h1>SignIn</h1>
@@ -26,14 +27,17 @@ class SignInFormBase extends Component {
     }
     onSubmit = event => {
         const {email, password} = this.state;
-        {/*
-        ONSUBMIT GETS CALLED AND WORKS FINE.
-        I CANT SAY THE SAME ABOUT THE REST OF IT.
-        OK I THINK I KNOW WHAT IS WRONG. WHEN I SEND AN EXPLICIT VALUE TO IT IT REFUSES TO SIGN IN.
-        IM THINKING THAT MEANS THAT THE WHOLE FUNCTION IS WRONG. RESTART TIME but yeah this needs to change. TODO REWRITE THIS FUNCTION.
-        */}
-
-            event.preventDefault();
+        firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+            this.setState({ ...INITIAL_STATE });
+            this.props.history.push(ROUTES.HOME);
+        }).catch(function(error) {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + " " + errorMessage);
+            // ...
+        });
+        event.preventDefault();
     };
     onChange = event => {
         this.setState({ [event.target.name]: event.target.value });

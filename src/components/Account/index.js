@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import {Menu, Icon} from "antd";
+import {withAuthorization} from '../Session';
 import 'antd/dist/antd.css';
 
 const Account = () => (
@@ -12,4 +13,5 @@ const Account = () => (
   </div>
 );
 
-export default Account;
+const condition = authUser => !!authUser;
+export default withAuthorization(condition)(Account);
