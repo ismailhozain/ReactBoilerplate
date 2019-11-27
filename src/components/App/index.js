@@ -23,24 +23,26 @@ import withAuthentication from "../Session/withAuthentication";
 
 const App = () => (
             <Router>
-                <div>
-                    <Navigation/>
-                    <Route exact path={ROUTES.LANDING} component={LandingPage}/>
-                    <Route exact path={ROUTES.SIGN_UP} component={SignUpPage}/>
-                    <Route exact path={ROUTES.SIGN_IN} component={SignInPage}/>
-                    <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/>
-                    <Route exact path={ROUTES.HOME} component={HomePage}/>
-                    <Route exact path={ROUTES.ACCOUNT} component={AccountPage}/>
-                    <Route exact path={ROUTES.TEACHER} component={TeacherPage}/>
-                    <Route exact path={ROUTES.STUDY} component={StudyPage}/>
-                    <Route exact path={ROUTES.WRITE} component={WritePage}/>
-                    <Route exact path={ROUTES.CLASSES} component={ClassesPage}/>
-                    <Route exact path={ROUTES.FEEDBACK} component={FeedbackPage}/>
-                    <Route exact path={ROUTES.SETTINGS} component={SettingsPage}/>
-                    <Route exact path={ROUTES.STATS} component={StatsPage}/>
-                    <Route exact path={ROUTES.CONTACT} component={ContactPage}/>
-                    <Route exact path={ROUTES.ABOUT} component={AboutPage}/>
-                    <Route exact path={ROUTES.ERROR} component={ErrorPage}/>
+                <div className={"App"}>
+                    <div className={"site-content"}>
+                        <Navigation/>
+                        <Route exact path={ROUTES.LANDING} component={LandingPage}/>
+                        <Route exact path={ROUTES.SIGN_UP} component={SignUpPage}/>
+                        <Route exact path={ROUTES.SIGN_IN} component={SignInPage}/>
+                        <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/>
+                        <Route exact path={ROUTES.HOME} component={HomePage}/>
+                        <Route exact path={ROUTES.ACCOUNT} component={AccountPage}/>
+                        <Route exact path={ROUTES.TEACHER} component={TeacherPage}/>
+                        <Route exact path={ROUTES.STUDY} component={StudyPage}/>
+                        <Route exact path={ROUTES.WRITE} component={WritePage}/>
+                        <Route exact path={ROUTES.CLASSES} component={ClassesPage}/>
+                        <Route exact path={ROUTES.FEEDBACK} component={FeedbackPage}/>
+                        <Route exact path={ROUTES.SETTINGS} component={SettingsPage}/>
+                        <Route exact path={ROUTES.STATS} component={StatsPage}/>
+                        <Route exact path={ROUTES.CONTACT} component={ContactPage}/>
+                        <Route exact path={ROUTES.ABOUT} component={AboutPage}/>
+                        <Route exact path={ROUTES.ERROR} component={ErrorPage}/>
+                    </div>
                     <Footer/>
                 </div>
             </Router>

@@ -2,24 +2,25 @@ import React, {Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import { compose } from 'recompose';
-
 import  {withFirebase}  from '../Firebase';
 import 'antd/dist/antd.css';
 import './signup.css';
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
+
 
 const SignUpPage = () => (
-    <div>
-        <h1>SignUp</h1>
-        <SignupForm/>
+    <div className={"container center"}>
+        <h1 className={"title"}>Sign Up</h1>
+        <SignupForm />
     </div>
 
 );
 
 const INITIAL_STATE = {
     firstName: '',
-    lastName: ' ',
+    lastName: '',
     email: '',
-    schoolId: ' ',
+    schoolId: '',
     passwordOne: '',
     passwordTwo: '',
     error: null,
@@ -67,52 +68,64 @@ class SignupFormBase extends Component {
            email === ' ';
        return (
             <div className={"center wholeDiv"}>
-                <form onSubmit={this.onSubmit}>
-                    <input
+                <Form onSubmit={this.onSubmit} mode={"horizontal"} className={"signUpStyles"}>
+                  <Form.Item>
+                    <Input
                         name="firstName"
                         value={firstName}
                         onChange={this.onChange}
                         type="text"
                         placeholder="First Name"
                     />
-                    <input
+                  </Form.Item>
+                  <Form.Item>
+                    <Input
                         name="lastName"
                         value={lastName}
                         onChange={this.onChange}
                         type="text"
                         placeholder="Last Name"
                     />
-                    <input
+                  </Form.Item>
+                <Form.Item>
+                    <Input
                         name="email"
                         value={email}
                         onChange={this.onChange}
                         type="email"
                         placeholder="School Email"
                     />
-                    <input
+                </Form.Item>
+                 <Form.Item>
+                    <Input
                         name="schoolId"
                         value={schoolId}
                         onChange={this.onChange}
                         type="text"
                         placeholder="School Id Number"
                     />
-                    <input
+                 </Form.Item>
+                 <Form.Item>
+                    <Input
                         name="passwordOne"
                         value={passwordOne}
                         onChange={this.onChange}
                         type="password"
                         placeholder="Canvas Password"
                     />
-                    <input
+                 </Form.Item>
+                 <Form.Item>
+                    <Input
                         name="passwordTwo"
                         value={passwordTwo}
                         onChange={this.onChange}
                         type="password"
                         placeholder="Confirm Canvas Password"
                     />
-                    <button disabled={isInvalid} type="submit">Sign Up</button>
+                    <Button disabled={isInvalid} type="submit">Sign Up</Button>
                     {error && <p>{error.message}</p>}
-                </form>
+                 </Form.Item>
+                 </Form>
             </div>
         );
     }
