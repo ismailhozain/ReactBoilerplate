@@ -43,7 +43,7 @@ const App = () => (
                         <Route exact path={ROUTES.ABOUT} component={AboutPage}/>
                         <Route exact path={ROUTES.ERROR} component={ErrorPage}/>
                     </div>
-                    <Footer/>
+
                 </div>
             </Router>
 );

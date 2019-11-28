@@ -6,13 +6,20 @@ import "firebase/auth";
 import "firebase/firestore";
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import {Icon} from "antd";
+import {Icon, Form, Input} from "antd";
+import './signin.css';
 import * as firebase from "firebase";
+import {SignupForm} from "../SignUp";
 const SignInPage = () => (
     <div>
-        <h1>SignIn</h1>
-        <SignInForm />
-
+        <div className={"containsAll"}>
+        <div className={"titleDiv"}>
+            <h1 className={"title"}>Sign In</h1>
+        </div>
+        <div className={"container"}>
+            <SignInForm />
+        </div>
+    </div>
     </div>
 );
 const INITIAL_STATE = {
@@ -46,27 +53,31 @@ class SignInFormBase extends Component {
         const { email, password, error } = this.state;
         const isInvalid = password === '' || email === '';
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    name="email"
-                    value={email}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <input
-                    name="password"
-                    value={password}
-                    onChange={this.onChange}
-                    type="password"
-                    placeholder="Password"
-                />
-                <button disabled={isInvalid} type="submit">
-                    Sign In
-                </button>
-                {error && <p>{error.message}</p>}
-                <Link to={ROUTES.SIGN_UP}><Icon type="login" />Sign Up</Link>
-            </form>
+            <Form onSubmit={this.onSubmit} className={"signInStyles"}>
+                <Form.Item>
+                    <Input
+                        name="email"
+                        value={email}
+                        onChange={this.onChange}
+                        type="text"
+                        placeholder="Email Address"
+                    />
+                </Form.Item>
+                <Form.Item>
+                    <Input
+                        name="password"
+                        value={password}
+                        onChange={this.onChange}
+                        type="password"
+                        placeholder="Password"
+                    />
+                </Form.Item>
+                    <button className={"submitButtonStyles"} disabled={isInvalid} type="submit">
+                        Sign In
+                    </button>
+                    {error && <p>{error.message}</p>}
+                    <Link className={"signUpLink"} to={ROUTES.SIGN_UP}><Icon type="login" />Sign Up</Link>
+            </Form>
         );
     }
 }

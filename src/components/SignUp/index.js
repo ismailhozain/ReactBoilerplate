@@ -5,15 +5,18 @@ import { compose } from 'recompose';
 import  {withFirebase}  from '../Firebase';
 import 'antd/dist/antd.css';
 import './signup.css';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button} from 'antd';
 
 
 const SignUpPage = () => (
-    <div className={"container center"}>
-        <h1 className={"title"}>Sign Up</h1>
-        <SignupForm />
+    <div className={"containsAll"}>
+        <div className={"titleDiv"}>
+            <h1 className={"title"}>Sign Up</h1>
+        </div>
+        <div className={"container"}>
+            <SignupForm />
+        </div>
     </div>
-
 );
 
 const INITIAL_STATE = {
@@ -87,7 +90,7 @@ class SignupFormBase extends Component {
                         placeholder="Last Name"
                     />
                   </Form.Item>
-                <Form.Item>
+                  <Form.Item>
                     <Input
                         name="email"
                         value={email}
@@ -95,8 +98,8 @@ class SignupFormBase extends Component {
                         type="email"
                         placeholder="School Email"
                     />
-                </Form.Item>
-                 <Form.Item>
+                  </Form.Item>
+                  <Form.Item>
                     <Input
                         name="schoolId"
                         value={schoolId}
@@ -122,7 +125,7 @@ class SignupFormBase extends Component {
                         type="password"
                         placeholder="Confirm Canvas Password"
                     />
-                    <Button disabled={isInvalid} type="submit">Sign Up</Button>
+                    <button disabled={isInvalid} type="submit" className={"submitButton"}>Sign Up</button>
                     {error && <p>{error.message}</p>}
                  </Form.Item>
                  </Form>
