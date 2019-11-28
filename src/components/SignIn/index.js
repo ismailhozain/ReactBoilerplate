@@ -6,7 +6,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import {Icon, Form, Input} from "antd";
+import {Icon, Form, Input, Alert} from "antd";
 import './signin.css';
 import * as firebase from "firebase";
 import {SignupForm} from "../SignUp";
@@ -77,10 +77,12 @@ class SignInFormBase extends Component {
                     </button>
                     {error && <p>{error.message}</p>}
                     <Link className={"signUpLink"} to={ROUTES.SIGN_UP}><Icon type="login" />Sign Up</Link>
+                    <Link className={"forgotLink"} to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
             </Form>
         );
     }
 }
+{/*TODO MAKE ALERT SYSTEM THAT DOES NOT SUCK*/}
 const SignInForm = compose(
     withRouter,
     withFirebase,
