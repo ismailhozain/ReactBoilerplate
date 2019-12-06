@@ -41,12 +41,14 @@ class SignupFormBase extends Component {
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
+
                 this.setState({ ...INITIAL_STATE });
                 this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
                 this.setState({ error });
             });
+
         event.preventDefault();
     };
 
