@@ -1,9 +1,16 @@
 import React from 'react';
-
-const Classes= () => (
-    <div>
-        <h1>Classes</h1>
+import Input from 'antd';
+import './feedback.css';
+import TextAreaComponent from "../TextAreaComponent";
+const Feedback= () => (
+    <div className={"container"}>
+        <div className={"titleDiv"}>
+            <h1 className={"title"}>Feedback</h1>
+        </div>
+        <TextAreaComponent/>
     </div>
+
 );
 
-export default Classes;
+
+export default Feedback;

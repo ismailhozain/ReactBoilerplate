@@ -6,6 +6,7 @@ import  {withFirebase}  from '../Firebase';
 import 'antd/dist/antd.css';
 import './signup.css';
 import { Form, Icon, Input, Button} from 'antd';
+import * as firebase from "firebase";
 
 
 const SignUpPage = () => (
@@ -41,6 +42,10 @@ class SignupFormBase extends Component {
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
+                const user = firebase.auth.currentUser();
+                user.updateProfile({displayName: firstName + " " + lastName});
+                {/*TODO DEBUG THIS SOMETIME.*/}
+                alert(user.displayName);
                 this.setState({ ...INITIAL_STATE });
                 this.props.history.push(ROUTES.HOME);
             })
