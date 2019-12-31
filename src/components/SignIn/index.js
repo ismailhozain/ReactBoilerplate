@@ -41,7 +41,7 @@ class SignInFormBase extends Component {
             // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode + " " + errorMessage);
+            alert(errorCode + " " + errorMessage);
             // ...
         });
         event.preventDefault();

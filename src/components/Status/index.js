@@ -13,6 +13,12 @@ const Status = () => (
             </p>
             <Link to={ROUTES.GRADES}>Lets go!</Link>
         </Card>
+        <Card title="Calendar" style={{ width: 300 }}>
+            <p>
+                We have combined your Google calendar with that of Canvas to make your life easier :)
+            </p>
+            <Link to={ROUTES.CALENDAR}>Lets go!</Link>
+        </Card>
         <Card title="Resources" style={{ width: 300 }}>
             <p>
                 Find information that pertains to you or somebody close to you.

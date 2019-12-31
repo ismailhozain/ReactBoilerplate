@@ -23,6 +23,7 @@ import StatusPage from '../Status';
 import ResourcesPage from '../Resources';
 import AssignmentsPage from '../Assignments';
 import GradesPage from '../Grades';
+import CalendarPage from '../Calendar';
 import Footer from "../Footer";
 import withAuthentication from "../Session/withAuthentication";
 
@@ -52,6 +53,7 @@ const App = () => (
                         <Route exact path={ROUTES.ASSIGNMENTS} component={AssignmentsPage}/>
                         <Route exact path={ROUTES.GRADES} component={GradesPage}/>
                         <Route exact path={ROUTES.RESOURCES} component={ResourcesPage}/>
+                        <Route exact path={ROUTES.CALENDAR} component={CalendarPage}/>
                     </div>
 
                 </div>

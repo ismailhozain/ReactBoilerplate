@@ -19,3 +19,4 @@ export const STATUS = '/status';
 export const ASSIGNMENTS = '/assignments';
 export const GRADES = '/grades';
 export const RESOURCES = '/resources';
+export const CALENDAR = '/calendar';

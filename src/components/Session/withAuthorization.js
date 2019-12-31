@@ -12,8 +12,8 @@ const withAuthorization = condition => Component => {
             this.listener = this.props.firebase.auth.onAuthStateChanged(
                 authUser => {
                     if (!condition(authUser)) {
-                      //  this.props.history.push(ROUTES.SIGN_IN);
-                    }{/*THIS BITCH IS OVERRIDING EVEYRTHING IN TERMS OF SIGNING IN. WACKY. BUT THERE IS ANOTHER ISSUE AS WELL.*/}
+                       this.props.history.push(ROUTES.SIGN_IN);
+                    }
                 },
             );
         }

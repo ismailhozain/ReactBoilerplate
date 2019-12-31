@@ -29,9 +29,6 @@ const NavigationAuth = () => (
             <Link to={ROUTES.ACCOUNT}><Icon type="user" />Account</Link>
         </Menu.Item>
         <Menu.Item>
-            <Timer/>
-        </Menu.Item>
-        <Menu.Item>
             <SignOutButton/>
         </Menu.Item>
     </Menu>
