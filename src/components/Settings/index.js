@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import { Switch, Icon } from 'antd';
+import {Switch, Icon, Card} from 'antd';
 import 'antd/dist/antd.css';
 import Button from "antd/lib/button";
 import Form from "antd/lib/form";
@@ -35,23 +35,21 @@ class SettingsClass extends Component {
         return(
             <div>
                 <h1>Settings</h1>
-                <div className={"darkTheme"}>
-                    <h3>Dark Theme</h3>
-                    <Switch
-                        checkedChildren={<Icon type="check" />}
-                        unCheckedChildren={<Icon type="close" />}
-                        defaultunChecked
-                    />
-                </div>
-                <div className={"accountStuff"}>
-                    <Form>
-                        {/*wait on this.*/}
-                    </Form>
-                    <h3>Delete account</h3>
+                <Card title="Dark Theme" style={{ width: 300 }}>
+                        <Switch
+                            checkedChildren={<Icon type="check" />}
+                            unCheckedChildren={<Icon type="close" />}
+                            defaultunChecked
+                        />
+                    </Card>
+                <Card title="Change Password" style={{ width: 300 }}>
+                    <Link to={ROUTES.PASSWORD_CHANGE}>Lets go!</Link>
+                </Card>
+                <Card title="Delete Account?" style={{ width: 300 }}>
                     <Button type={"danger"} onClick={this.onSubmit}>
                         Delete Account Permanently!
                     </Button>
-                </div>
+                </Card>
             </div>
         );
     }

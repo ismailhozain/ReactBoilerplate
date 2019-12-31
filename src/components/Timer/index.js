@@ -6,7 +6,6 @@ import moment from "moment";
 class myComponent extends Component {
     componentDidMount() {
         const startTime = moment().format();
-        alert(startTime);
     }
     func() {
         alert("sa");

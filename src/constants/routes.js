@@ -6,6 +6,7 @@ export const ACCOUNT = '/account';
 export const TEACHER = '/teacher';
 export const STUDY = '/study';
 export const PASSWORD_FORGET = '/pw-forget';
+export const PASSWORD_CHANGE = 'pw-change';
 export const WRITE = '/write';
 export const CLASSES = '/classes';
 export const FEEDBACK = '/feedback';
