@@ -7,7 +7,7 @@ import Button from "antd/lib/button";
 import Form from "antd/lib/form";
 import * as firebase from "firebase";
 import {withAuthorization} from '../Session';
-
+import './settings.css';
 const Settings = () => (
     <div className={"titleDiv"}>
         <h1 className={"title"}>Settings</h1>

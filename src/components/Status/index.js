@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import {Card} from "antd";
-
+import {withAuthorization} from "../Session";
+import './status.css';
 const Status = () => (
     <div>
         <h1>Status</h1>
@@ -18,7 +19,7 @@ const Status = () => (
             </p>
             <Link to={ROUTES.RESOURCES}>Lets go!</Link>
         </Card>
-        <Card title="Status" style={{ width: 300 }}>
+        <Card title="Assignments" style={{ width: 300 }}>
             <p>
                 Don't ever miss an assignment! (or at least forget they exist)
             </p>
@@ -26,5 +27,6 @@ const Status = () => (
         </Card>
     </div>
 );
+const condition = authUser => !!authUser;
 
-export default Status;
+export default withAuthorization(condition)(Status);

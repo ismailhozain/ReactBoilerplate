@@ -11,5 +11,6 @@ const Grades = () => (
 
     </div>
 );
+const condition = authUser => !!authUser;
 
-export default Grades;
+export default withAuthorization(condition)(Grades);

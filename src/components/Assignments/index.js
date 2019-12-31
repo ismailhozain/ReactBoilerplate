@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {withAuthorization} from "../Session";
+
+class AssignmentsClass extends Component {
+    componentDidMount() {
+
+    }
+
+    render() {
+        return(
+            <div>
+                <h1>Assignments</h1>
+            </div>
+        );
+    }
+}
 
 const Assignments = () => (
-    <div>
-        <h1>Assignments</h1>
-    </div>
+   <AssignmentsClass/>
 );
+const condition = authUser => !!authUser;
 
-export default Assignments;
+export default withAuthorization(condition)(Assignments);

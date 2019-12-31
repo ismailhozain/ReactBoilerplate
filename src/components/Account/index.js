@@ -47,6 +47,6 @@ const Account = () => (
       <AccountClass/>
   </div>
 );
-{/*TODO IMPLEMENT CSS FOR THIS PAGE SOMETIME SOON. COPY FROM OTHER PAGES.*/}
+
 const condition = authUser => !!authUser;
 export default withAuthorization(condition)(Account);

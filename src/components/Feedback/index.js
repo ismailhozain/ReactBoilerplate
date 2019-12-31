@@ -2,6 +2,7 @@ import React from 'react';
 import Input from 'antd';
 import './feedback.css';
 import TextAreaComponent from "../TextAreaComponent";
+import {withAuthorization} from "../Session";
 const Feedback= () => (
     <div className={"container"}>
         <div className={"titleDiv"}>
@@ -12,5 +13,6 @@ const Feedback= () => (
 
 );
 
+const condition = authUser => !!authUser;
 
-export default Feedback;
+export default withAuthorization(condition)(Feedback);
