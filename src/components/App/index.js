@@ -18,6 +18,10 @@ import ContactPage from '../Contact';
 import AboutPage from '../About';
 import ErrorPage from '../Error';
 import * as ROUTES from '../../constants/routes';
+import StatusPage from '../Status';
+import ResourcesPage from '../Resources';
+import AssignmentsPage from '../Assignments';
+import GradesPage from '../Grades';
 import Footer from "../Footer";
 import withAuthentication from "../Session/withAuthentication";
 
@@ -42,6 +46,10 @@ const App = () => (
                         <Route exact path={ROUTES.CONTACT} component={ContactPage}/>
                         <Route exact path={ROUTES.ABOUT} component={AboutPage}/>
                         <Route exact path={ROUTES.ERROR} component={ErrorPage}/>
+                        <Route exact path={ROUTES.STATUS} component={StatusPage}/>
+                        <Route exact path={ROUTES.ASSIGNMENTS} component={AssignmentsPage}/>
+                        <Route exact path={ROUTES.GRADES} component={GradesPage}/>
+                        <Route exact path={ROUTES.RESOURCES} component={ResourcesPage}/>
                     </div>
 
                 </div>

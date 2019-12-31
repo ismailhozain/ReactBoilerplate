@@ -8,6 +8,12 @@ const Home = () => (
   <div>
     <h1>What would you like to do today?</h1>
     <div>
+        <Card title="Status" style={{ width: 300 }}>
+            <p>
+                Check grades, assignment reminders, calendar and your information.
+            </p>
+            <Link to={ROUTES.STATUS}>Lets go!</Link>
+        </Card>
         <Card title="Study" style={{ width: 300 }}>
             <p>
                 Find the best sources for reliable information including videos, articles and everything in between!

@@ -7,6 +7,7 @@ import Logo from './logo.svg';
 import './navigation.css';
 import AuthUserContext from "../Session/context";
 import SignOutButton from "../SignOut";
+import Timer from "../Timer";
 const Navigation = () => (
     <div>
         <AuthUserContext.Consumer>
@@ -26,6 +27,9 @@ const NavigationAuth = () => (
         </Menu.Item>
         <Menu.Item>
             <Link to={ROUTES.ACCOUNT}><Icon type="user" />Account</Link>
+        </Menu.Item>
+        <Menu.Item>
+            <Timer/>
         </Menu.Item>
         <Menu.Item>
             <SignOutButton/>

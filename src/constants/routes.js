@@ -14,3 +14,7 @@ export const STATS = '/stats';
 export const ABOUT = '/about';
 export const CONTACT = '/contact';
 export const ERROR = '/404';
+export const STATUS = '/status';
+export const ASSIGNMENTS = '/assignments';
+export const GRADES = '/grades';
+export const RESOURCES = '/resources';
