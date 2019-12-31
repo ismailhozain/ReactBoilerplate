@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import {Menu, Button, Icon} from "antd";
+import {Menu, Button, Icon, Card} from "antd";
 import {withAuthorization} from '../Session';
 import 'antd/dist/antd.css';
 import firebase from "firebase";
@@ -23,8 +23,18 @@ class AccountClass extends Component {
     render() {
         return (
         <div>
-            <Button><Link to={ROUTES.SETTINGS}>Settings</Link></Button>
-            <Button><Link to={ROUTES.STATS}>Statistics</Link></Button>
+            <Card title="Settings" style={{ width: 300 }}>
+                <p>
+                    Change things up!
+                </p>
+                <Link to={ROUTES.SETTINGS}>Lets go!</Link>
+            </Card>
+            <Card title="Stats" style={{ width: 300 }}>
+                <p>
+                    Learn about how you have been doing lately with fun colorful graphs!
+                </p>
+                <Link to={ROUTES.STATS}>Lets go!</Link>
+            </Card>
         </div>
         )
             }

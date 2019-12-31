@@ -10,7 +10,7 @@ import {withAuthorization} from '../Session';
 
 const Settings = () => (
     <div className={"titleDiv"}>
-        <h1 className={"title"}>Account Settings</h1>
+        <h1 className={"title"}>Settings</h1>
         <div>
             <SettingsClass/>
         </div>
