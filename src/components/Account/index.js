@@ -23,6 +23,12 @@ class AccountClass extends Component {
     render() {
         return (
         <div>
+            <Card title="Profile" style={{ width: 300 }}>
+                <p>
+                    Your public information.
+                </p>
+                <Link to={ROUTES.PROFILE}>Lets go!</Link>
+            </Card>
             <Card title="Settings" style={{ width: 300 }}>
                 <p>
                     Change things up!

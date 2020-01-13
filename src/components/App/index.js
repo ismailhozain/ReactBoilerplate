@@ -24,6 +24,7 @@ import ResourcesPage from '../Resources';
 import AssignmentsPage from '../Assignments';
 import GradesPage from '../Grades';
 import CalendarPage from '../Calendar';
+import ProfilePage from '../Profile';
 import Footer from "../Footer";
 import withAuthentication from "../Session/withAuthentication";
 
@@ -54,6 +55,7 @@ const App = () => (
                         <Route exact path={ROUTES.GRADES} component={GradesPage}/>
                         <Route exact path={ROUTES.RESOURCES} component={ResourcesPage}/>
                         <Route exact path={ROUTES.CALENDAR} component={CalendarPage}/>
+                        <Route exact path={ROUTES.PROFILE} component={ProfilePage}/>
                     </div>
 
                 </div>

@@ -28,6 +28,7 @@ const INITIAL_STATE = {
     error: null,
 };
 class SignInFormBase extends Component {
+    
     constructor(props) {
         super(props);
         this.state = { ...INITIAL_STATE };
