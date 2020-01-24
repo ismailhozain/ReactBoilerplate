@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import ReactTimer from '@xendora/react-timer';
 import './timer.css';
 import moment from "moment";
-
 class myComponent extends Component {
     componentDidMount() {
         const startTime = moment().format();
@@ -13,6 +11,9 @@ class myComponent extends Component {
     render() {
         return (
             <div>
+                <Timer>
+                    <Timer.Seconds />
+                </Timer>
             </div>
         )
     }
