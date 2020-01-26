@@ -29,7 +29,7 @@ const NavigationAuth = () => (
             <Link to={ROUTES.ACCOUNT}><Icon type="user" />Account</Link>
         </Menu.Item>
         <Menu.Item>
-            <Timer/>
+            <Link to={ROUTES.STATS}><Timer/></Link>
         </Menu.Item>
         <Menu.Item>
             <SignOutButton/>

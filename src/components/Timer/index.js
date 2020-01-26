@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import './timer.css';
-import moment from "moment";
+import SignInPage from "../SignIn";
+import Timer from "react-compound-timer";
 class myComponent extends Component {
     componentDidMount() {
-        const startTime = moment().format();
+
     }
     func() {
         alert("sa");
@@ -12,7 +13,7 @@ class myComponent extends Component {
         return (
             <div>
                 <Timer>
-                    <Timer.Seconds />
+                    <Timer.Hours formatValue={value => `${value} hours. `} />:<Timer.Minutes formatValue={value => `${value} hours. `} />:<Timer.Seconds formatValue={value => value />
                 </Timer>
             </div>
         )

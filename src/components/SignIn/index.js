@@ -10,6 +10,7 @@ import {Icon, Form, Input, Alert} from "antd";
 import './signin.css';
 import * as firebase from "firebase";
 import {SignupForm} from "../SignUp";
+import moment from "moment";
 const SignInPage = () => (
     <div>
         <div className={"containsAll"}>
@@ -27,6 +28,7 @@ const INITIAL_STATE = {
     password: '',
     error: null,
 };
+let LoginTime = 0;
 class SignInFormBase extends Component {
     
     constructor(props) {
@@ -38,6 +40,7 @@ class SignInFormBase extends Component {
         firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
             this.setState({ ...INITIAL_STATE });
             this.props.history.push(ROUTES.HOME);
+            LoginTime = moment().format();
         }).catch(function(error) {
             // Handle Errors here.
             const errorCode = error.code;
@@ -84,9 +87,10 @@ class SignInFormBase extends Component {
     }
 }
 {/*TODO MAKE ALERT SYSTEM THAT DOES NOT SUCK*/}
+
 const SignInForm = compose(
     withRouter,
     withFirebase,
 )(SignInFormBase);
 export default SignInPage;
-export { SignInForm };
+export { SignInForm, LoginTime};
