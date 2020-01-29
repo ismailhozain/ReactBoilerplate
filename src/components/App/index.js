@@ -31,8 +31,9 @@ import withAuthentication from "../Session/withAuthentication";
 const App = () => (
             <Router>
                 <div className={"App"}>
+                    <Navigation/>
                     <div className={"site-content"}>
-                        <Navigation/>
+                        <main>
                         <Route exact path={ROUTES.LANDING} component={LandingPage}/>
                         <Route exact path={ROUTES.SIGN_UP} component={SignUpPage}/>
                         <Route exact path={ROUTES.SIGN_IN} component={SignInPage}/>
@@ -56,8 +57,9 @@ const App = () => (
                         <Route exact path={ROUTES.RESOURCES} component={ResourcesPage}/>
                         <Route exact path={ROUTES.CALENDAR} component={CalendarPage}/>
                         <Route exact path={ROUTES.PROFILE} component={ProfilePage}/>
+                        </main>
                     </div>
-
+                    <Footer/>
                 </div>
             </Router>
 );
