@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import { withFirebase } from '../Firebase';
 import Button from "antd/es/button";
+import moment from "moment";
 import * as firebase from "firebase";
 import * as ROUTES from '../../constants/routes';
+import {LoginTime} from "../SignIn";
+let LogoutTime;
 class SignOutButtonWrapped extends Component {
     onSubmit = event => {
         firebase.auth().signOut().then(function() {
             this.props.push(ROUTES.LANDING);
+            LogoutTime = moment().format();
         }).catch(function(error){
             console.log(error);
         });
@@ -28,3 +32,4 @@ const SignOutButton = ({ firebase }) => (
 );
 
 export default withFirebase(SignOutButton);
+export {LogoutTime};

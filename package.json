@@ -10,6 +10,7 @@
     "firebase-tools": "^7.6.2",
     "mdbreact": "^4.25.0",
     "moment": "^2.24.0",
+    "nivo": "^0.31.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-compound-timer": "^1.1.15",

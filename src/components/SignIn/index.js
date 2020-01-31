@@ -11,6 +11,8 @@ import './signin.css';
 import * as firebase from "firebase";
 import {SignupForm} from "../SignUp";
 import moment from "moment";
+
+
 const SignInPage = () => (
     <div>
         <div className={"containsAll"}>
@@ -41,7 +43,6 @@ class SignInFormBase extends Component {
             this.setState({ ...INITIAL_STATE });
             this.props.history.push(ROUTES.HOME);
             LoginTime = moment().format();
-            alert(LoginTime);
         }).catch(function(error) {
             // Handle Errors here.
             const errorCode = error.code;
