@@ -59,7 +59,6 @@ const App = () => (
                         <Route exact path={ROUTES.PROFILE} component={ProfilePage}/>
                         </main>
                     </div>
-                    <Footer/>
                 </div>
             </Router>
 );

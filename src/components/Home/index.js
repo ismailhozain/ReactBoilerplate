@@ -4,6 +4,7 @@ import { Card } from 'antd';
 import * as ROUTES from '../../constants/routes';
 import 'antd/dist/antd.css';
 import {withAuthorization} from '../Session';
+import Footer from "../Footer";
 const Home = () => (
   <div>
     <h1>What would you like to do today?</h1>
