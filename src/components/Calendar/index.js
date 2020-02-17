@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {withAuthorization} from "../Session";
 import './calendar.css';
-import Calendar from 'react_google_calendar'
 
 class CalendarClass extends Component {
-    constructor(props) {
+    /*constructor(props) {
         super(props);
         this.state = {
             events: []
@@ -46,12 +45,16 @@ class CalendarClass extends Component {
                 )
                 })}
         );
-    }
+    }*/
 }
 
-const Calendar = () => (
-    <CalendarClass/>
-);
+const CalendarA = () => (
+    <div>
+        <h1>
+            Calendar Events
+        </h1>
+    </div>
+    );
 const condition = authUser => !!authUser;
 
-export default withAuthorization(condition)(Calendar);
+export default withAuthorization(condition)(CalendarA);
