@@ -3,6 +3,7 @@
   "version": "1.19.4",
   "private": true,
   "dependencies": {
+    "@ant-design/dark-theme": "^1.0.3",
     "@react-pdf/renderer": "^1.6.8",
     "@xendora/react-timer": "^1.1.0",
     "antd": "^3.24.3",

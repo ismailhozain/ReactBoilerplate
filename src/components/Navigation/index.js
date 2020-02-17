@@ -31,7 +31,7 @@ const NavigationAuth = () => (
             <Link to={ROUTES.ACCOUNT}><Icon type="user" />Account</Link>
         </Menu.Item>
         <Menu.Item>
-            <Link to={ROUTES.STATS}><Timer/></Link>
+            <Link to={ROUTES.TEACHER}><Icon type="crown"/>Teacher</Link>
         </Menu.Item>
         <Menu.Item>
             <SignOutButton/>
