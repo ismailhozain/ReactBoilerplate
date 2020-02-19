@@ -8,7 +8,7 @@
     "@xendora/react-timer": "^1.1.0",
     "antd": "^3.24.3",
     "firebase": "^7.2.2",
-    "firebase-tools": "^7.6.2",
+    "firebase-tools": "^7.13.1",
     "googleapis": "^47.0.0",
     "mdbreact": "^4.25.0",
     "moment": "^2.24.0",
