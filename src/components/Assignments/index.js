@@ -9,11 +9,12 @@ class AssignmentsClass extends Component {
         }
     }
     componentDidMount() {
-        fetch('https://mckinneyisd.instructure.com/v1/courses/{course_id}/assignment_groups',
+        fetch('https://mckinneyisd.instructure.com/v1/courses/courses',
             {
                 method: "GET",
                 headers: new Headers({
-                    Accept: "application/json+canvas-string-ids"
+                    Accept: "application/json+canvas-string-ids",
+                    Authorization: "Bearer <ACCESS-TOKEN>",
                 })
             }
         ).then(res => res.json())
