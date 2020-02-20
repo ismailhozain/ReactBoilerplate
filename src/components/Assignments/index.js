@@ -2,8 +2,25 @@ import React, {Component} from 'react';
 import {withAuthorization} from "../Session";
 
 class AssignmentsClass extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            assignments : []
+        }
+    }
     componentDidMount() {
-
+        fetch('https://mckinneyisd.instructure.com/v1/courses/{course_id}/assignment_groups',
+            {
+                method: "GET",
+                headers: new Headers({
+                    Accept: "application/json+canvas-string-ids"
+                })
+            }
+        ).then(res => res.json())
+            .then(response =>
+            this.setState(/*LOOK IM KINDA CLUELESS HERE IMA RETURN TO THIS LATER*/)
+            )
+            .catch(error => alert(error));
     }
 
     render() {
