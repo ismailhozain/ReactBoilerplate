@@ -5,11 +5,8 @@ import {Menu, Icon} from "antd";
 import 'antd/dist/antd.css';
 import Logo from './logo.svg';
 import './navigation.css';
-import moment from 'moment';
 import AuthUserContext from "../Session/context";
 import SignOutButton from "../SignOut";
-import Timer from "../Timer";
-let LoadTime = 0;
 const Navigation = () => (
     <div>
         <AuthUserContext.Consumer>
@@ -31,16 +28,13 @@ const NavigationAuth = () => (
             <Link to={ROUTES.ACCOUNT}><Icon type="user" />Account</Link>
         </Menu.Item>
         <Menu.Item>
-            <Link to={ROUTES.TEACHER}><Icon type="crown"/>Teacher</Link>
-        </Menu.Item>
-        <Menu.Item>
             <SignOutButton/>
         </Menu.Item>
     </Menu>
 );
 const NavigationNonAuth = () => (
     <Menu mode={"horizontal"}>
-        <Menu.Item>
+         <Menu.Item>
             <Link to={ROUTES.LANDING}><img alt = "the studyboard logo, a blue and white window diamond." src={Logo}/></Link>
         </Menu.Item>
         <Menu.Item>
@@ -49,4 +43,3 @@ const NavigationNonAuth = () => (
     </Menu>
 );
 export default Navigation;
-export {LoadTime};

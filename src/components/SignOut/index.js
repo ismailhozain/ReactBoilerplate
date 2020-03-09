@@ -4,7 +4,6 @@ import Button from "antd/es/button";
 import moment from "moment";
 import * as firebase from "firebase";
 import * as ROUTES from '../../constants/routes';
-import {LoginTime} from "../SignIn";
 let LogoutTime;
 class SignOutButtonWrapped extends Component {
     onSubmit = event => {

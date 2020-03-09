@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import * as firebase from "firebase";
 import * as ROUTES from "../../constants/routes";
-import {Form, Icon, Input} from "antd";
-import {Link} from "react-router-dom";
-
+import {Form, Input} from "antd";
 const PasswordForget = () => (
   <div className={"titleDiv"}>
     <h1 className={"title"}>Reset Password</h1>
@@ -23,7 +21,7 @@ class EmailForm extends Component {
         this.state = { ...INITIAL_STATE };
     }
     onSubmit = event => {
-        const {email, password} = this.state;
+        const {email} = this.state;
         firebase.auth().sendPasswordResetEmail(email).then(() => {
             alert("Your request has been sent! Please check your email.");
             this.props.history.push(ROUTES.SIGN_IN);
@@ -38,7 +36,7 @@ class EmailForm extends Component {
         this.setState({ [event.target.name]: event.target.value });
     };
     render() {
-        const { email, error } = this.state;
+        const { email} = this.state;
         return (
             <Form onSubmit={this.onSubmit} className={"signInStyles"}>
                 <Form.Item>
@@ -51,7 +49,6 @@ class EmailForm extends Component {
                     />
                 </Form.Item>
                 <button className={"submitButtonStyles"} type="submit">Send Reset Email</button>
-                {/*TODO FIX THIS BUTTON SOMETIME IN THE NEXT DECADE*/}
             </Form>
         );
     }

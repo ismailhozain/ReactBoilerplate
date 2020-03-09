@@ -1,11 +1,11 @@
 import React, {Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import {withRouter } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import { compose } from 'recompose';
 import  {withFirebase}  from '../Firebase';
 import 'antd/dist/antd.css';
 import './signup.css';
-import { Form, Icon, Input, Button} from 'antd';
+import { Form, Input} from 'antd';
 import * as firebase from "firebase";
 
 
@@ -41,7 +41,6 @@ class SignupFormBase extends Component {
         const { firstName, lastName, schoolId, email, passwordOne} = this.state;
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne).then(authUser => {
-            // Create a user in your Firebase realtime database
             return this.props.firebase
                 .user(authUser.user.uid)
                 .set({

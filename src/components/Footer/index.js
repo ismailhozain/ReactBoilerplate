@@ -9,9 +9,8 @@ import './footer.css';
 const Footer = () => (
     <div className={"foot center"}>
         <StickyFooter>
-            <Link className="links" to={ROUTES.CONTACT}>Contact us.</Link>
             <Link className="links" to={ROUTES.ABOUT}>About</Link>
-            <p className={"copy"}>Copyright MHS Software Division</p>
+            <p className={"copy"}>Copyright Ismail Hozain</p>
         </StickyFooter>
     </div>
 );

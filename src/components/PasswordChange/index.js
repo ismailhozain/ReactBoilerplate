@@ -2,7 +2,6 @@ import React from 'react';
 import {withAuthorization} from "../Session";
 import './passwordChange.css';
 import Form from "antd/es/form";
-{/*TODO IMPLEMENT THIS PAGE TONIGHT AYY YUP DUDE nod nod siryessir*/}
 const PasswordChange = () => (
   <div>
     <h1>PasswordChange</h1>
