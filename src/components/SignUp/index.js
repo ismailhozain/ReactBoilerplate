@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 import './signup.css';
 import { Form, Icon, Input, Button} from 'antd';
 import * as firebase from "firebase";
-
+import * as ROLES from '../../constants/roles';
 
 const SignUpPage = () => (
     <div className={"containsAll"}>
@@ -28,6 +28,7 @@ const INITIAL_STATE = {
     passwordOne: '',
     passwordTwo: '',
     error: null,
+    isTeacher: false,
 };
 
 
@@ -36,9 +37,15 @@ class SignupFormBase extends Component {
         super(props);
         this.state = {...INITIAL_STATE};
     }
-
+    onChangeCheckbox = event => {
+        this.setState({[event.target.name]: event.target.checked});
+    };
     onSubmit = event => {
-        const { firstName, lastName, schoolId, email, passwordOne} = this.state;
+        const { firstName, lastName, schoolId, email, passwordOne, isTeacher} = this.state;
+        const roles ={};
+        if (isTeacher) {
+            roles[ROLES.TEACHER] = ROLES.TEACHER;
+        }
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne).then(authUser => {
             // Create a user in your Firebase realtime database
@@ -47,6 +54,7 @@ class SignupFormBase extends Component {
                 .set({
                     schoolId,
                     email,
+                    roles,
                 });
         })
             .then(authUser => {
@@ -75,6 +83,7 @@ class SignupFormBase extends Component {
            passwordOne,
            passwordTwo,
            error,
+            isTeacher,
         } = this.state;
 
        const isInvalid =
@@ -83,6 +92,15 @@ class SignupFormBase extends Component {
            email === ' ';
        return (
             <div className={"center wholeDiv"}>
+                <label>
+                    Admin:
+                    <input
+                        name="isTeacher"
+                        type="checkbox"
+                        checked={isTeacher}
+                        onChange={this.onChangeCheckbox}
+                    />
+                </label>
                 <Form onSubmit={this.onSubmit} mode={"horizontal"} className={"signUpStyles"}>
                   <Form.Item>
                     <Input

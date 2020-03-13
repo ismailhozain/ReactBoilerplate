@@ -6,10 +6,9 @@ import "firebase/auth";
 import "firebase/firestore";
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import {Icon, Form, Input, Alert} from "antd";
+import {Icon, Form, Input} from "antd";
 import './signin.css';
 import * as firebase from "firebase";
-import {SignupForm} from "../SignUp";
 import moment from "moment";
 
 
@@ -44,11 +43,9 @@ class SignInFormBase extends Component {
             this.props.history.push(ROUTES.HOME);
             LoginTime = moment().format();
         }).catch(function(error) {
-            // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
             alert(errorCode + " " + errorMessage);
-            // ...
         });
         event.preventDefault();
     };
@@ -88,11 +85,10 @@ class SignInFormBase extends Component {
         );
     }
 }
-{/*TODO MAKE ALERT SYSTEM THAT DOES NOT SUCK*/}
 
 const SignInForm = compose(
     withRouter,
     withFirebase,
 )(SignInFormBase);
 export default SignInPage;
-export { SignInForm, LoginTime};
+export { SignInForm};

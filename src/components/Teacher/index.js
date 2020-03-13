@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import withAuthorization from "../Session/withAuthorization";
 import * as ROLES from '../../constants/roles';
 import {withFirebase} from "../Firebase";
+import { compose } from 'recompose';
 
 class TeacherPage extends Component {
     constructor(props) {
@@ -32,7 +33,7 @@ class TeacherPage extends Component {
         const {users} = this.state;
         return (
             <div>
-                <UserList users={users}/>
+                <p>I am a teacher wait wtf</p>
             </div>
         )
 
@@ -57,6 +58,9 @@ const UserList = ({ users }) => (
     </ul>
 );
 
-
-const condition = authUser => authUser;
-export default withAuthorization(condition)(TeacherPage);
+const condition = authUser =>
+    authUser && !!authUser.roles[ROLES.TEACHER];
+export default compose(
+    withAuthorization(condition),
+    withFirebase,
+)(TeacherPage);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -9,8 +9,7 @@ import PasswordChangePage from "../PasswordChange";
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import TeacherPage from '../Teacher';
-import StudyPage from '../Study';
-import WritePage from '../Write';
+import WorkPage from '../Work';
 import ClassesPage from '../Classes';
 import FeedbackPage from '../Feedback';
 import SettingsPage from '../Settings';
@@ -20,13 +19,11 @@ import AboutPage from '../About';
 import ErrorPage from '../Error';
 import * as ROUTES from '../../constants/routes';
 import StatusPage from '../Status';
-import ResourcesPage from '../Resources';
 import AssignmentsPage from '../Assignments';
 import GradesPage from '../Grades';
 import CalendarPage from '../Calendar';
-import ProfilePage from '../Profile';
-import Footer from "../Footer";
 import withAuthentication from "../Session/withAuthentication";
+import Route from "react-router-dom/es/Route";
 
 const App = () => (
             <Router>
@@ -42,8 +39,7 @@ const App = () => (
                         <Route exact path={ROUTES.HOME} component={HomePage}/>
                         <Route exact path={ROUTES.ACCOUNT} component={AccountPage}/>
                         <Route exact path={ROUTES.TEACHER} component={TeacherPage}/>
-                        <Route exact path={ROUTES.STUDY} component={StudyPage}/>
-                        <Route exact path={ROUTES.WRITE} component={WritePage}/>
+                        <Route exact path={ROUTES.WORK} component={WorkPage}/>
                         <Route exact path={ROUTES.CLASSES} component={ClassesPage}/>
                         <Route exact path={ROUTES.FEEDBACK} component={FeedbackPage}/>
                         <Route exact path={ROUTES.SETTINGS} component={SettingsPage}/>
@@ -54,9 +50,7 @@ const App = () => (
                         <Route exact path={ROUTES.STATUS} component={StatusPage}/>
                         <Route exact path={ROUTES.ASSIGNMENTS} component={AssignmentsPage}/>
                         <Route exact path={ROUTES.GRADES} component={GradesPage}/>
-                        <Route exact path={ROUTES.RESOURCES} component={ResourcesPage}/>
                         <Route exact path={ROUTES.CALENDAR} component={CalendarPage}/>
-                        <Route exact path={ROUTES.PROFILE} component={ProfilePage}/>
                         </main>
                     </div>
                 </div>

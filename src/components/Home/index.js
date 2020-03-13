@@ -15,17 +15,11 @@ const Home = () => (
             </p>
             <Link to={ROUTES.STATUS}>Lets go!</Link>
         </Card>
-        <Card title="Study" style={{ width: 300 }}>
+        <Card title="Work" style={{ width: 300 }}>
             <p>
-                Find the best sources for reliable information including videos, articles and everything in between!
+                Complete Assignments.
             </p>
-            <Link to={ROUTES.STUDY}>Lets go!</Link>
-        </Card>
-        <Card title="Write" style={{ width: 300 }}>
-            <p>
-                Kill essayist procrastination for good! Pick your settings and go get those essays done!
-            </p>
-            <Link to={ROUTES.WRITE}>Lets go!</Link>
+            <Link to={ROUTES.WORK}>Lets go!</Link>
         </Card>
         <Card title="Find Classes" style={{ width: 300 }}>
             <p>
@@ -35,7 +29,7 @@ const Home = () => (
         </Card>
         <Card title="Feedback" style={{ width: 300 }}>
             <p>
-                Want to tell the devs something (Yes we check it.)?
+                Want to tell the developers something?
             </p>
             <Link to={ROUTES.FEEDBACK}>Lets go!</Link>
         </Card>
