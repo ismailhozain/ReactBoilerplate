@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
-import './TextAreaComponent/TextAreaComponent.css'
+import '../css/text_area_component.css'
 
 const TextAreaConst = () => (
     <div className={"titleDiv"}>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../routes';
 import {Menu, Icon} from "antd";
 import 'antd/dist/antd.css';
-import Logo from '../../assets/logo.svg';
+import Logo from '../assets/logo.svg';
 import '../css/navigation.css';
 import AuthUserContext from "./Session/context";
 import SignOutButton from "./sign_out";
