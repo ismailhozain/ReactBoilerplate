@@ -101,7 +101,8 @@ class Video_player extends Component {
 
     render() {
         return (
-            <div>
+
+            <div className={"entirePlayerClass"}>
                 <Player className={"playerClass"}
                     src={"http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4"}
                 >
