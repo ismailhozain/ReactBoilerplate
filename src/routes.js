@@ -21,4 +21,4 @@ export const GRADES = '/grades';
 export const RESOURCES = '/resources';
 export const CALENDAR = '/calendar';
 export const PROFILE = '/profile';
-export const RECORD_LECTURE = '/record_lecture';
+
