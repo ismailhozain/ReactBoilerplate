@@ -19,7 +19,7 @@ const Settings = () => (
 class SettingsClass extends Component {
 
     onSubmit = event => {
-        firebase.auth().delete().then(() => {
+        this.props.firebase.auth().delete().then(() => {
             window.confirm("Are you sure you want to delete your account?");
             this.props.history.push(ROUTES.LANDING);
         }).catch(function(error) {

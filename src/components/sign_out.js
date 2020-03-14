@@ -7,7 +7,7 @@ import * as ROUTES from '../routes';
 let LogoutTime;
 class SignOutButtonWrapped extends Component {
     onSubmit = event => {
-        firebase.auth().signOut().then(function() {
+        this.props.firebase.auth().signOut().then(function() {
             this.props.push(ROUTES.LANDING);
             LogoutTime = moment().format();
         }).catch(function(error){

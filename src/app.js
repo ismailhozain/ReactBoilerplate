@@ -24,6 +24,7 @@ import AssignmentsPage from './screens/assignments';
 import GradesPage from './screens/grades';
 import CalendarPage from './screens/calendar';
 import ProfilePage from './screens/profile';
+import RecordLecture from "./screens/record_lecture";
 import withAuthentication from "./components/Session/withAuthentication";
 
 const App = () => (
@@ -54,6 +55,7 @@ const App = () => (
                         <Route exact path={ROUTES.RESOURCES} component={ResourcesPage}/>
                         <Route exact path={ROUTES.CALENDAR} component={CalendarPage}/>
                         <Route exact path={ROUTES.PROFILE} component={ProfilePage}/>
+                        <Route exact path={ROUTES.RECORD_LECTURE} component={RecordLecture}/>
                         </main>
                     </div>
                 </div>

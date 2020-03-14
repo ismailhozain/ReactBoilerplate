@@ -23,7 +23,7 @@ class EmailForm extends Component {
     }
     onSubmit = event => {
         const {email} = this.state;
-        firebase.auth().sendPasswordResetEmail(email).then(() => {
+        this.props.firebase.auth().sendPasswordResetEmail(email).then(() => {
             alert("Your request has been sent! Please check your email.");
             this.props.history.push(ROUTES.SIGN_IN);
         }).catch(function(error) {
