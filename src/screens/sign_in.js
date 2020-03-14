@@ -38,7 +38,7 @@ class SignInFormBase extends Component {
     }
     onSubmit = event => {
         const {email, password} = this.state;
-        this.props.firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+        firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
             this.setState({ ...INITIAL_STATE });
             this.props.history.push(ROUTES.HOME);
             LoginTime = moment().format();
