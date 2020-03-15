@@ -5,7 +5,7 @@ import { compose } from 'recompose';
 import 'antd/dist/antd.css';
 import '../css/signup.css';
 import * as ROLES from '../roles';
-import { Form, Icon, Input, Button} from 'antd';
+import { Form, Icon, Input, Button, Checkbox} from 'antd';
 import * as firebase from "firebase";
 
 import {withFirebase} from "../components/Firebase";
@@ -93,15 +93,6 @@ class SignupFormBase extends Component {
             email === ' ';
         return (
             <div className={"center wholeDiv"}>
-                <label>
-                    Admin:
-                    <input
-                        name="isTeacher"
-                        type="checkbox"
-                        checked={isTeacher}
-                        onChange={this.onChangeCheckbox}
-                    />
-                </label>
                 <Form onSubmit={this.onSubmit} mode={"horizontal"} className={"signUpStyles"}>
                     <Form.Item>
                         <Input
@@ -156,6 +147,12 @@ class SignupFormBase extends Component {
                             type="password"
                             placeholder="Confirm Canvas Password"
                         />
+                        <Checkbox
+                            name="isTeacher"
+                            type="checkbox"
+                            checked={isTeacher}
+                            onChange={this.onChangeCheckbox}
+                        >Teacher</Checkbox>
                         <button disabled={isInvalid} type="submit" className={"submitButton"}>Sign Up</button>
                         {error && <p>{error.message}</p>}
                     </Form.Item>

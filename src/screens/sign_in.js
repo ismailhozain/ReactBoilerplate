@@ -8,6 +8,7 @@ import { withFirebase } from '../components/Firebase';
 import * as ROUTES from '../routes';
 import {Icon, Form, Input} from "antd";
 import '../css/signin.css';
+import '../index.css';
 import * as firebase from "firebase";
 import moment from "moment";
 
@@ -77,7 +78,7 @@ class SignInFormBase extends Component {
                         placeholder="Password"
                     />
                 </Form.Item>
-                    <button className={"submitButtonStyles"} disabled={isInvalid} type="submit">
+                    <button className={"submitButton"} disabled={isInvalid} type="submit">
                         Sign In
                     </button>
                     {error && <p>{error.message}</p>}
@@ -87,7 +88,6 @@ class SignInFormBase extends Component {
         );
     }
 }
-{/*TODO MAKE ALERT SYSTEM THAT DOES NOT SUCK*/}
 
 const SignInForm = compose(
     withRouter,
