@@ -7,7 +7,6 @@ import Logo from '../assets/logo.svg';
 import '../css/navigation.css';
 import AuthUserContext from "./Session/context";
 import SignOutButton from "./sign_out";
-let LoadTime = 0;
 const Navigation = () => (
     <div>
         <AuthUserContext.Consumer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation from './components/navigation';
 import LandingPage from './screens/landing';
 import SignUpPage from './screens/sign_up';
@@ -19,7 +19,7 @@ import * as ROUTES from './routes';
 import AssignmentsPage from './screens/assignments';
 import CalendarPage from './screens/calendar';
 import ProfilePage from './screens/profile';
-import RecordLecture from "./screens/record_lecture";
+import RecordLecturePage from "./screens/record_lecture";
 import withAuthentication from "./components/Session/withAuthentication";
 
 const App = () => (
@@ -27,7 +27,7 @@ const App = () => (
                 <div className={"App"}>
                     <Navigation/>
                     <div className={"site-content"}>
-                        <main>
+                        <Switch>
                         <Route exact path={ROUTES.LANDING} component={LandingPage}/>
                         <Route exact path={ROUTES.SIGN_UP} component={SignUpPage}/>
                         <Route exact path={ROUTES.SIGN_IN} component={SignInPage}/>
@@ -45,8 +45,9 @@ const App = () => (
                         <Route exact path={ROUTES.ASSIGNMENTS} component={AssignmentsPage}/>
                         <Route exact path={ROUTES.CALENDAR} component={CalendarPage}/>
                         <Route exact path={ROUTES.PROFILE} component={ProfilePage}/>
-                        <Route exact path={ROUTES.RECORD_LECTURE} component={RecordLecture}/>
-                        </main>
+                        <Route exact path={ROUTES.RECORD_LECTURE} component={RecordLecturePage}/>
+                        <Route component={ErrorPage}/>
+                        </Switch>
                     </div>
                 </div>
             </Router>

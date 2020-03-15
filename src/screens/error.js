@@ -9,9 +9,6 @@ const Error = () => (
         <h2 className={"center"}>That page does not exist. </h2>
         <Button><Link to={ROUTES.SIGN_IN}>Sign In.</Link></Button>
         <p>Go <Button><Link to={ROUTES.LANDING}>Home</Link></Button></p>
-        {
-            //TODO MAKE THIS DIFFER IF LOGGED IN OR NOT. SIMPLE SETUP.
-        }
     </div>
 );
 

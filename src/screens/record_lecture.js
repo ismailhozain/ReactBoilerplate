@@ -4,7 +4,11 @@ import '../css/record_lecture.css'
 import Firebase, {withFirebase} from "../components/Firebase";
 
 class RecordLecture extends React.Component {
-    render() {//TODO: give better loading screen
+    componentDidMount() {
+        alert("chicekd");
+    }
+
+    render() {
         const {storage, db} = this.props.firebase;
         return (
             <div className={'recorderContainer'}>
@@ -42,4 +46,4 @@ class RecordLecture extends React.Component {
 }
 
 
-export default RecordLecture = withFirebase(RecordLecture);
+export default withFirebase(RecordLecture);
