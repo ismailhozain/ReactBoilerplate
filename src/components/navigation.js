@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../routes';
+import * as ROLES from '../roles';
 import {Menu, Icon} from "antd";
 import 'antd/dist/antd.css';
 import Logo from '../assets/logo.svg';
@@ -16,7 +17,7 @@ const Navigation = () => (
         </AuthUserContext.Consumer>
     </div>
 );
-const NavigationAuth = () => (
+const NavigationAuth = ({authUser}) => (
     <Menu mode={"horizontal"}>
         <Menu.Item>
             <Link to={ROUTES.LANDING}><img alt = "the studyboard logo, a blue and white window diamond." src={Logo}/></Link>
@@ -27,9 +28,10 @@ const NavigationAuth = () => (
         <Menu.Item>
             <Link to={ROUTES.ACCOUNT}><Icon type="user" />Account</Link>
         </Menu.Item>
+        {!!authUser.roles[ROLES.TEACHER] && (
         <Menu.Item>
             <Link to={ROUTES.TEACHER}><Icon type="crown"/>Teacher</Link>
-        </Menu.Item>
+        </Menu.Item>)}
         <Menu.Item>
             <SignOutButton/>
         </Menu.Item>
@@ -46,4 +48,3 @@ const NavigationNonAuth = () => (
     </Menu>
 );
 export default Navigation;
-export {LoadTime};

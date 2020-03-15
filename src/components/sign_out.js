@@ -2,14 +2,11 @@ import React, {Component} from 'react';
 import { withFirebase } from './Firebase';
 import Button from "antd/es/button";
 import * as firebase from "firebase";
-import * as ROUTES from '../routes';
 class SignOutButtonWrapped extends Component {
     onSubmit = event => {
         firebase.auth().signOut().then(function() {
-            this.props.push(ROUTES.LANDING);
         }).catch(function(error){
             console.log(error);
-            this.props.push(ROUTES.LANDING);
         });
         event.preventDefault();
     };
