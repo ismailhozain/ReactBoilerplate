@@ -1,12 +1,12 @@
-This is the react-firebase template that I created. There will eventually be more versions optimized for different kinds of apps that I build. Those have not yet been determined. They will be in different branches once that does occur.
+This is the react template that I created for SPAs. There will eventually be more versions optimized for different kinds of apps that I build. Those have not yet been determined. They will be in different branches once that does occur.
 
-It includes (or will) the following libraries and tools
+
+There is a branch for React-based SPAs that can be used for showcasing and rapid fire projects.
 
 * React
 * React Router
-* Firebase
-* Ant Design 
-* Styled Components
+* Ant Design
+* Polished/Styled Components
 
 
 * `npm install yarn`

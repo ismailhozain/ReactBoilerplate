@@ -3,7 +3,7 @@ import './landing.css';
 
 const Landing = () => (
   <div className={"titleDiv"}>
-    <h1 className={"title"}>Template Landing!</h1>
+    <h1 className={"title"}>Your app goes here!</h1>
   </div>
 );
 
