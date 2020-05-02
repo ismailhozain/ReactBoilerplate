@@ -5,6 +5,5 @@ export const HOME = '/home';
 export const ACCOUNT = '/account';
 export const PASSWORD_FORGET = '/pw-forget';
 export const PASSWORD_CHANGE = 'pw-change';
-export const STATS = '/stats';
 export const ABOUT = '/about';
 export const ERROR = '/404';

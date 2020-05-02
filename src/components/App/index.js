@@ -8,7 +8,6 @@ import PasswordForgetPage from '../PasswordForget';
 import PasswordChangePage from "../PasswordChange";
 import HomePage from '../Home';
 import AccountPage from '../Account';
-import StatsPage from '../Stats';
 import AboutPage from '../About';
 import ErrorPage from '../Error';
 import * as ROUTES from '../../constants/routes';
@@ -27,7 +26,6 @@ const App = () => (
                         <Route exact path={ROUTES.PASSWORD_CHANGE} component={PasswordChangePage}/>
                         <Route exact path={ROUTES.HOME} component={HomePage}/>
                         <Route exact path={ROUTES.ACCOUNT} component={AccountPage}/>
-                        <Route exact path={ROUTES.STATS} component={StatsPage}/>
                         <Route exact path={ROUTES.ABOUT} component={AboutPage}/>
                         <Route exact path={ROUTES.ERROR} component={ErrorPage}/>
                         </main>
