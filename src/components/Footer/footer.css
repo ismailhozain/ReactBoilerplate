@@ -2,14 +2,14 @@
     background-color: #47525E;
     color: whitesmoke;
     text-decoration: underline;
-    position:absolute;
-    height: 184px;
+    height: 15vh;
     left:0;
     bottom:0;
     right:0;
 }
 .copy {
     display: block;
+    text-decoration: none;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 20px;

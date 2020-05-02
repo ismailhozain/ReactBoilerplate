@@ -5,6 +5,7 @@ import { Card} from "antd";
 import {withAuthorization} from '../Session';
 import 'antd/dist/antd.css';
 import firebase from "firebase";
+import Footer from "../Footer";
 
 class AccountClass extends Component {
     componentDidMount() {
@@ -36,6 +37,7 @@ const Account = () => (
         <h1 className={"title"}>Account</h1>
     </div>
       <AccountClass/>
+      <Footer/>
   </div>
 );
 

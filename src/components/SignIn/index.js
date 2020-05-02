@@ -10,18 +10,20 @@ import {Icon, Form, Input} from "antd";
 import './signin.css';
 import * as firebase from "firebase";
 import moment from "moment";
+import Footer from "../Footer";
 
 
 const SignInPage = () => (
     <div>
-        <div className={"containsAll"}>
+        <div className={"container"}>
         <div className={"titleDiv"}>
             <h1 className={"title"}>Sign In</h1>
         </div>
-        <div className={"container"}>
+        <div className={""}>
             <SignInForm />
         </div>
     </div>
+        <Footer/>
     </div>
 );
 const INITIAL_STATE = {
